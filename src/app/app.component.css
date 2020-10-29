@@ -1,0 +1,8 @@
+input.form-control{
+    text-align: center;
+}
+
+.container-input{
+    position: relative;
+    top: -20px;
+}
