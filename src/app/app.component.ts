@@ -8,11 +8,12 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit {
   title = 'weather-app';
+  weather: any;
 
   constructor(private service: AppService) {}
 
   ngOnInit():void{
-    console.log(this.service.getWeather());
+    this.service.getWeather().subscribe( (weather: any) => this.weather = weather );
   }
 
 }

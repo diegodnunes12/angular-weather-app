@@ -6,3 +6,20 @@ input.form-control{
     position: relative;
     top: -20px;
 }
+
+.img-icon{
+    max-width: 80%;
+}
+
+p.secundary{
+    font-weight: 300;
+    color: #333;
+    font-size: 0.9em;
+    margin-top: -14px;
+}
+
+.info{
+    color:#777;
+    font-weight: 700;
+    font-size: 1.2em;
+}
