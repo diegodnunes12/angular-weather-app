@@ -32,22 +32,31 @@
           <p class="lead">{{weather?.city}}</p>
           <p class="secundary">Atualizado em: {{weather?.date}} {{weather?.time}}</p>
           <div class="row">
-            <div class="col-md-6 text-center">
+            <div class="col-6 text-center">
               <img src="https://assets.hgbrasil.com/weather/images/{{weather?.img_id}}.png" class="img-icon">
             </div>
-            <div class="col-md-6">
+            <div class="col-6">
               <h1 class="display-3">{{weather?.temp}}&#176;</h1>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 text-center info">
+            <div class="col-6 text-center info">
               <div>Umidade</div>
               <div>{{weather?.humidity}}%</div>
             </div>
-            <div class="col-md-6 text-center info">
+            <div class="col-6 text-center info">
               <div>Vento</div>
               <div>{{weather?.wind_speedy}}</div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <p class="lead">{{weather?.city}}</p>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>

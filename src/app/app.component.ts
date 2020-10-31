@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
 
   constructor(private service: AppService) {}
 
-  ngOnInit(){    
-    this.service.getWeather('Conceição_dos_Ouros,MG').subscribe( (weather: any) => this.weather = weather );
+  async ngOnInit(){    
+    await this.service.getWeather('Conceição_dos_Ouros,MG').subscribe( (weather: any) => this.weather = weather );
   }
 
   onSubmit(f: NgForm) {
