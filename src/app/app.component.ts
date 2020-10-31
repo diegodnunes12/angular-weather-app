@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AppService } from './app.service';
 
 @Component({
@@ -12,8 +13,12 @@ export class AppComponent implements OnInit {
 
   constructor(private service: AppService) {}
 
-  ngOnInit():void{
-    this.service.getWeather().subscribe( (weather: any) => this.weather = weather );
+  ngOnInit(){    
+    this.service.getWeather('Conceição_dos_Ouros,MG').subscribe( (weather: any) => this.weather = weather );
+  }
+
+  onSubmit(f: NgForm) {
+    this.service.getWeather(f.value.city).subscribe( (weather: any) => this.weather = weather );
   }
 
 }

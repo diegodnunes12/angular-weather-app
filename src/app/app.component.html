@@ -20,31 +20,33 @@
   </div>
   <div class="container-input">
     <div class="container">
-      <input class="form-control form-control-lg" type="text" name="city" value="Conceição dos Ouros - MG" placeholder="Encontre sua cidade">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <input class="form-control form-control-lg" type="text" name="city" placeholder="Encontre sua cidade: São Paulo, SP" ngModel required #city="ngModel">
+      </form>
     </div>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <div class="jumbotron">
-          <p class="lead">{{weather.city}}</p>
-          <p class="secundary">Atualizado em: {{weather.date}} {{weather.time}}</p>
+          <p class="lead">{{weather?.city}}</p>
+          <p class="secundary">Atualizado em: {{weather?.date}} {{weather?.time}}</p>
           <div class="row">
             <div class="col-md-6 text-center">
-              <img src="https://assets.hgbrasil.com/weather/images/{{weather.img_id}}.png" class="img-icon">
+              <img src="https://assets.hgbrasil.com/weather/images/{{weather?.img_id}}.png" class="img-icon">
             </div>
             <div class="col-md-6">
-              <h1 class="display-3">{{weather.temp}}&#176;</h1>
+              <h1 class="display-3">{{weather?.temp}}&#176;</h1>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 text-center info">
               <div>Umidade</div>
-              <div>{{weather.humidity}}%</div>
+              <div>{{weather?.humidity}}%</div>
             </div>
             <div class="col-md-6 text-center info">
               <div>Vento</div>
-              <div>{{weather.wind_speedy}}</div>
+              <div>{{weather?.wind_speedy}}</div>
             </div>
           </div>
         </div>

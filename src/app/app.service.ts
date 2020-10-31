@@ -9,8 +9,8 @@ export class AppService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getWeather(){
-    return this.httpClient.get('https://api.hgbrasil.com/weather?key=6a54a76a&city_name=Concei%C3%A7%C3%A3o_dos_Ouros')
+  getWeather(city: String){
+    return this.httpClient.get(`https://api.hgbrasil.com/weather?key=6a54a76a&city_name=${city}`)
       .pipe(
         map(
           (resp: any) => resp.results
