@@ -4,7 +4,7 @@ input.form-control{
 
 .container-input{
     position: relative;
-    top: -20px;
+    top: -48px;
 }
 
 .img-icon{
@@ -22,4 +22,14 @@ p.secundary{
     color:#777;
     font-weight: 700;
     font-size: 1.2em;
+}
+
+.p-date{
+    font-size: 0.9em;
+}
+
+.display-5{
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
 }

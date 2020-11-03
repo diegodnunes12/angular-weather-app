@@ -9,13 +9,36 @@ export class AppService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getWeather(city: String){
-    return this.httpClient.get(`https://api.hgbrasil.com/weather?key=6a54a76a&city_name=${city}`)
+  getWeatherByCity(city: String){
+    return this.httpClient.get(`https://api.hgbrasil.com/weather?key=a3059346&city_name=${city}`)
       .pipe(
         map(
           (resp: any) => resp.results
         )
       );
+  }
+
+  getWeatherByGeoLocalization(lat: String, lon: String){
+    return this.httpClient.get(`https://api.hgbrasil.com/weather?key=a3059346&lat=${lat}&lon=${lon}&user_ip=remote`)
+      .pipe(
+        map(
+          (resp: any) => resp.results
+        )
+      );
+  }
+
+  getPosition(): Promise<any>
+  {
+    return new Promise((resolve, reject) => {
+
+      navigator.geolocation.getCurrentPosition(resp => {
+          resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
+        },
+        err => {
+          reject(err);
+        });
+    });
+
   }
 
 }
